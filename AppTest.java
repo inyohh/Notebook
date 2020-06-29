@@ -24,4 +24,19 @@ class AppTest {
         Assertions.assertEquals(true,result);
     }
 
+    @Test void shouldReturnTrueWhenDeleteSingle(){
+        Notebook notebook=new Notebook();
+        notebook.addition("7.1之前交web作业");
+        /**
+         * 先添加才能有删除，否则返回false
+         */
+        boolean result=notebook.deleteSingle(0);
+        Assertions.assertEquals(true,result);
+    }
+
+    @Test void shouldReturnTrueWhenDeleteAll(){
+        Notebook notebook=new Notebook();
+        boolean result=notebook.deleteAll();
+        Assertions.assertEquals(true,result);
+    }
 }
